@@ -15,9 +15,11 @@ def login():
     if request.method == "GET":
         return render_template("index.html")
     else:
-        if bob == request.form["username"] and \
-           123 == request.form["password"]:
-            return "Hello " + request.form
+        if "bob" == request.form["username"] and \
+           "123" == request.form["password"]:
+            return "Hello " + request.form["username"]
         else:
             return "wrong password"
 
+if __name__ == "__main__":
+    app.run(debug=True)
